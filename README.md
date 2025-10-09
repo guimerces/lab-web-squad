@@ -25,8 +25,8 @@ Este é um projeto simples criado com **Next.js**, que exibe uma página “Hell
 1. Clone este repositório:
 
    ```bash
-   git clone https://github.com/usuario/hello-world-api.git
-   cd hello-world-api
+   git clone https://github.com/guimerces/lab-web-squad.git
+   cd hello-world
    ```
 
 2. Instale as dependências:

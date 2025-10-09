@@ -1,10 +1,18 @@
-# 🧩 Hello World com API Route
+# Atividade 1 - Hello World com API Route
 
 Este é um projeto simples criado com **Next.js**, que exibe uma página “Hello World” e uma **API Route** que retorna uma mensagem em formato JSON.
 
 ---
 
-## 📂 Estrutura do projeto
+## Alunos da Squad:
+- Iasmin da Cruz Marinho
+- Guilherme Antonio Merces Silva
+- Rafael Silva Santana
+- Stéfane Oliveira
+
+---
+
+## Estrutura do projeto
 
 ```
 .
@@ -20,7 +28,7 @@ Este é um projeto simples criado com **Next.js**, que exibe uma página “Hell
 
 ---
 
-## 💻 Como executar localmente
+## Como executar localmente
 
 1. Clone este repositório:
 
@@ -49,13 +57,9 @@ Este é um projeto simples criado com **Next.js**, que exibe uma página “Hell
 
 ---
 
-## 🌐 Rotas principais
+## Rotas principais
 
 | Rota         | Descrição                                        |
 | ------------ | ------------------------------------------------ |
 | `/`          | Página inicial exibindo “Hello World!”           |
 | `/api/hello` | Rota de API que retorna um JSON com uma mensagem |
-
-
-
-

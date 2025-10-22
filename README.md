@@ -1,6 +1,6 @@
-# Atividade 1 - Hello World com API Route
+# Atividade 2 - Estruturação Atomic Design + Tela de Cadastro de Usuários
 
-Este é um projeto simples criado com **Next.js**, que exibe uma página “Hello World” e uma **API Route** que retorna uma mensagem em formato JSON.
+Este é um projeto simples criado com **Next.js**, que utiliza o a estruturação atomic design junto com uma página de cadastro de usuário.
 
 ---
 
@@ -16,14 +16,26 @@ Este é um projeto simples criado com **Next.js**, que exibe uma página “Hell
 
 ```
 .
-├── app/
-│   ├── api/
-│   │   └── hello/
-│   │       └── route.js     # Rota da API
-│   └── page.js               # Página principal "Hello World"
-├── package.json
-├── README.md
-└── ...
+/src
+|-- /app
+|   |-- global.css
+|   |-- layout.tsx       
+|   |-- page.tsx 
+|
+|-- /components
+|   |-- /atoms            
+|   |   |-- button.tsx
+|   |   |-- input.tsx
+|   |   |-- label.tsx
+|   |
+|   |-- /molecules        
+|   |   |-- formfield.tsx
+|   |
+|   |-- /organisms    
+|   |   |-- form.tsx
+|   |
+|   |-- /templates    
+|   |   |-- authlayout.tsx
 ```
 
 ---
@@ -34,7 +46,7 @@ Este é um projeto simples criado com **Next.js**, que exibe uma página “Hell
 
    ```bash
    git clone https://github.com/guimerces/lab-web-squad.git
-   cd hello-world
+   cd cadastro-usuario
    ```
 
 2. Instale as dependências:
@@ -59,6 +71,7 @@ Este é um projeto simples criado com **Next.js**, que exibe uma página “Hell
 
 ## Rotas principais
 
+VERIFICAR SE PRECISA DE ROTA
 | Rota         | Descrição                                        |
 | ------------ | ------------------------------------------------ |
 | `/`          | Página inicial exibindo “Hello World!”           |

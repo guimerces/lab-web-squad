@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { FormField } from '@/components/molecules/formfield';
 import { Button } from '@/components/atoms/button';
+import Image from 'next/image';
+import Cadastro from '@/assets/images/caderneta.png';
 
 export function RegistrationForm() {
   const [formData, setFormData] = useState({
@@ -24,6 +26,15 @@ export function RegistrationForm() {
 
   return (
     <form onSubmit={handleSubmit} className="w-full">
+      <div className="flex justify-center">
+        <Image
+          src={Cadastro}
+          alt=""
+          width={80}
+          height={80}
+          priority
+        />
+      </div>
       <h2 className="text-2xl font-bold text-center mb-6 text-gray-500">Cadastre-se</h2>
 
       <FormField

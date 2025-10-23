@@ -9,7 +9,7 @@ Este é um projeto simples criado com **Next.js**, que utiliza o a estruturaçã
 - Guilherme Antonio Merces Silva
 - Gustavo de Oliveira Ferreira
 - Iasmim da Cruz Marinho
-- Lávios Dias e Dias do Vale
+- Lávio Dias e Dias do Vale
 - Rafael Silva Santana
 - Stéfane Oliveira
 

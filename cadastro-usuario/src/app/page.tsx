@@ -1,10 +1,5 @@
-import { RegistrationForm } from "@/components/organisms/form";
-import { AuthLayout } from "@/components/templates/authlayout";
+import { CadastroPage } from "@/components/pages/cadastro-page";
 
-export default function CadastroPage() {
-  return (
-    <AuthLayout>
-      <RegistrationForm />
-    </AuthLayout>
-  );
+export default function Page() {
+  return <CadastroPage />;
 }

@@ -9,6 +9,7 @@ Este é um projeto simples criado com **Next.js**, que utiliza o a estruturaçã
 - Guilherme Antonio Merces Silva
 - Rafael Silva Santana
 - Stéfane Oliveira
+- Lávio Dias
 
 ---
 
@@ -33,6 +34,9 @@ Este é um projeto simples criado com **Next.js**, que utiliza o a estruturaçã
 |   |
 |   |-- /organisms    
 |   |   |-- form.tsx
+|   |
+|   |-- /pages
+|   |   |-- cadastro-page.tsx
 |   |
 |   |-- /templates    
 |   |   |-- authlayout.tsx
@@ -71,8 +75,6 @@ Este é um projeto simples criado com **Next.js**, que utiliza o a estruturaçã
 
 ## Rotas principais
 
-VERIFICAR SE PRECISA DE ROTA
 | Rota         | Descrição                                        |
 | ------------ | ------------------------------------------------ |
-| `/`          | Página inicial exibindo “Hello World!”           |
-| `/api/hello` | Rota de API que retorna um JSON com uma mensagem |
+| `/`          | Página de cadastro de usuários                   |

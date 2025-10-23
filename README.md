@@ -47,6 +47,7 @@ Este é um projeto simples criado com **Next.js**, que utiliza o a estruturaçã
 |   |
 |   |-- /templates    
 |   |   |-- authlayout.tsx
+|-- ...
 ```
 
 ---

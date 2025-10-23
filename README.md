@@ -6,9 +6,9 @@ Este é um projeto apresenta as atividades incrementais assíncronas da matéria
 
 ## Alunos da Squad:
 - Eduardo Augusto Barros Coutinho
-- Iasmim da Cruz Marinho
 - Guilherme Antonio Merces Silva
 - Gustavo de Oliveira Ferreira
+- Iasmim da Cruz Marinho
 - Lávios Dias e Dias do Vale
 - Rafael Silva Santana
 - Stéfane Oliveira

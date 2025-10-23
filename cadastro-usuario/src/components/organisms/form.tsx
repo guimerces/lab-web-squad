@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { FormField } from '@/components/molecules/formfield';
+import { PasswordField } from '@/components/molecules/password-field';
 import { Button } from '@/components/atoms/button';
 import Image from 'next/image';
 import Cadastro from '@/assets/images/caderneta.png';
@@ -55,9 +56,8 @@ export function RegistrationForm() {
         onChange={handleChange}
         required
       />
-      <FormField
+      <PasswordField
         label="Senha"
-        type="password"
         name="password"
         placeholder="••••••••"
         value={formData.password}

@@ -5,11 +5,13 @@ Este é um projeto simples criado com **Next.js**, que utiliza o a estruturaçã
 ---
 
 ## Alunos da Squad:
-- Iasmin da Cruz Marinho
+- Eduardo Augusto Barros Coutinho
+- Iasmim da Cruz Marinho
 - Guilherme Antonio Merces Silva
+- Gustavo de Oliveira Ferreira
+- Lávios Dias e Dias do Vale
 - Rafael Silva Santana
 - Stéfane Oliveira
-- Lávio Dias
 
 ---
 
@@ -21,7 +23,11 @@ Este é um projeto simples criado com **Next.js**, que utiliza o a estruturaçã
 |-- /app
 |   |-- global.css
 |   |-- layout.tsx       
-|   |-- page.tsx 
+|   |-- page.tsx
+|
+|-- /assets
+|   |-- /images
+|       |-- caderneta.png
 |
 |-- /components
 |   |-- /atoms            
@@ -31,6 +37,7 @@ Este é um projeto simples criado com **Next.js**, que utiliza o a estruturaçã
 |   |
 |   |-- /molecules        
 |   |   |-- formfield.tsx
+|   |   |-- password-field.tsx
 |   |
 |   |-- /organisms    
 |   |   |-- form.tsx

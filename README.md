@@ -5,8 +5,8 @@ Este é um projeto simples criado com **Next.js**, que exibe uma página “Hell
 ---
 
 ## Alunos da Squad:
-- Iasmim da Cruz Marinho
 - Guilherme Antonio Merces Silva
+- Iasmim da Cruz Marinho
 - Rafael Silva Santana
 - Stéfane Oliveira
 

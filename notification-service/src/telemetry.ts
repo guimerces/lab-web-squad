@@ -9,7 +9,7 @@ import logger from './logger';
 export function initializeTelemetry() {
   const sdk = new NodeSDK({
     resource: new Resource({
-      [SemanticResourceAttributes.SERVICE_NAME]: 'ufbank-api',
+      [SemanticResourceAttributes.SERVICE_NAME]: 'notification-service',
     }),
     traceExporter: new OTLPTraceExporter({
       url: process.env.OTEL_EXPORTER_OTLP_ENDPOINT || 'http://jaeger:4318/v1/traces',
@@ -19,7 +19,7 @@ export function initializeTelemetry() {
         '@opentelemetry/instrumentation-http': {
           enabled: true,
           ignoreIncomingRequestHook: (req) => {
-            // Ignorar health checks e metrics
+            // Ignorar health checks
             return !!(req.url?.includes('/health') || req.url?.includes('/metrics'));
           },
         },
@@ -35,4 +35,3 @@ export function initializeTelemetry() {
     sdk.shutdown();
   };
 }
-

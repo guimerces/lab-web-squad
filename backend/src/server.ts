@@ -6,8 +6,10 @@ import { initializeTelemetry } from './telemetry';
 import * as promClient from 'prom-client';
 import logger from './logger';
 
-// Inicializar telemetria
+// IMPORTANTE: Inicializar telemetria ANTES de importar axios
 const shutdownTelemetry = initializeTelemetry();
+
+import axios from 'axios';
 
 const app = express();
 app.use(cors());
@@ -35,31 +37,32 @@ const httpRequestsTotal = new promClient.Counter({
 // Circuit Breaker
 const circuitBreaker = new CircuitBreaker();
 
-// Simulação de ledger service com possíveis falhas
-async function simulateLedgerService(type: string): Promise<{ success: boolean; message: string }> {
-  const startTime = Date.now();
+// Chamar Ledger Service
+async function callLedgerService(type: string) {
+  const LEDGER_URL = process.env.LEDGER_SERVICE_URL || 'http://ledger-service:3002';
   
-  // Simula latência de rede
-  await new Promise(resolve => setTimeout(resolve, Math.random() * 200 + 50));
-
-  if (type === 'success') {
-    return { success: true, message: 'Transação processada com sucesso' };
-  } 
-  
-  if (type === 'error') {
-    throw new Error('Erro ao processar transação no ledger');
-  }
-  
-  // Tipo 'chaos': 60% sucesso, 40% erro
-  if (type === 'chaos') {
-    const random = Math.random();
-    if (random > 0.6) {
-      throw new Error('Falha intermitente no ledger (Chaos)');
+  try {
+    const response = await axios.post(`${LEDGER_URL}/process`, { type });
+    return response.data;
+  } catch (error: any) {
+    if (error.response) {
+      throw new Error(error.response.data.message || 'Erro no Ledger Service');
     }
-    return { success: true, message: 'Transação processada (Chaos mode)' };
+    throw new Error('Ledger Service indisponível');
   }
+}
 
-  throw new Error('Tipo de transação inválido');
+// Chamar Notification Service
+async function callNotificationService(message: string) {
+  const NOTIFICATION_URL = process.env.NOTIFICATION_SERVICE_URL || 'http://notification-service:3003';
+  
+  try {
+    const response = await axios.post(`${NOTIFICATION_URL}/send`, { message });
+    return response.data;
+  } catch (error: any) {
+    // Notificações podem falhar sem quebrar a transação
+    logger.warn('Falha ao enviar notificação', { error: error.message });
+  }
 }
 
 // Endpoint de transações
@@ -71,7 +74,13 @@ app.post('/api/transaction', async (req: Request<{}, TransactionResponse, Transa
     logger.info('Processando transação', { type });
 
     const result = await circuitBreaker.execute(async () => {
-      return await simulateLedgerService(type);
+      // Chamar Ledger Service
+      const ledgerResult = await callLedgerService(type);
+      
+      // Chamar Notification Service
+      await callNotificationService(`Transação ${type} processada`);
+      
+      return ledgerResult;
     });
 
     const latency = Date.now() - startTime;

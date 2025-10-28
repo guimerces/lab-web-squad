@@ -72,6 +72,38 @@ services:
       - ufbank-network
     restart: unless-stopped
 
+  ledger-service:
+    build:
+      context: ./ledger-service
+      dockerfile: Dockerfile
+    container_name: ufbank-ledger
+    ports:
+      - "3002:3002"
+    environment:
+      - NODE_ENV=production
+      - PORT=3002
+      - LOKI_HOST=http://loki:3100
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://jaeger:4318/v1/traces
+    networks:
+      - ufbank-network
+    restart: unless-stopped
+
+  notification-service:
+    build:
+      context: ./notification-service
+      dockerfile: Dockerfile
+    container_name: ufbank-notification
+    ports:
+      - "3003:3003"
+    environment:
+      - NODE_ENV=production
+      - PORT=3003
+      - LOKI_HOST=http://loki:3100
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://jaeger:4318/v1/traces
+    networks:
+      - ufbank-network
+    restart: unless-stopped
+
   jaeger:
     image: jaegertracing/all-in-one:latest
     container_name: ufbank-jaeger

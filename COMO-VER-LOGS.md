@@ -1,6 +1,6 @@
-# 📋 Como Visualizar Logs - UFBank
+# Como Visualizar Logs - UFBank
 
-## 🎯 Localização dos Logs
+## Localização dos Logs
 
 ## Grafana + Loki (Visualização Estruturada)
 
@@ -22,11 +22,13 @@
 ### Queries úteis:
 
 - **Todos os logs**: `{job="ufbank-api"}`
+- **Ledger Service**: `{job="ledger-service"}`
+- **Notification Service**: `{job="notification-service"}`
 - **Apenas erros**: `{job="ufbank-api"} |= "error"`
 - **Circuit Breaker**: `{job="ufbank-api"} |= "Circuit Breaker"`
 - **Transações**: `{job="ufbank-api"} |= "Transação"`
 
 ### Tipos de logs capturados:
-- ✅ **Info**: Inicialização, transações bem-sucedidas
-- ⚠️ **Warn**: Circuit Breaker em modo Half-Open
-- 🔴 **Error**: Circuit Breaker aberto, falhas em transações
+- **Info**: Inicialização, transações bem-sucedidas
+- **Warn**: Circuit Breaker em modo Half-Open
+- **Error**: Circuit Breaker aberto, falhas em transações

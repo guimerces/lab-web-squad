@@ -55,4 +55,3 @@ histogram_quantile(0.99, rate(http_request_duration_seconds_bucket[5m]))
 
 1. No frontend (http://localhost:3000), gere algumas requisições
 2. Volte ao Grafana e observe as métricas atualizando em tempo real
-

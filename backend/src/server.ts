@@ -38,11 +38,11 @@ const httpRequestsTotal = new promClient.Counter({
 const circuitBreaker = new CircuitBreaker();
 
 // Chamar Ledger Service
-async function callLedgerService(type: string) {
+async function callLedgerService(type: string, forceError: boolean = false) {
   const LEDGER_URL = process.env.LEDGER_SERVICE_URL || 'http://ledger-service:3002';
   
   try {
-    const response = await axios.post(`${LEDGER_URL}/process`, { type });
+    const response = await axios.post(`${LEDGER_URL}/process`, { type, forceError });
     return response.data;
   } catch (error: any) {
     if (error.response) {
@@ -53,15 +53,21 @@ async function callLedgerService(type: string) {
 }
 
 // Chamar Notification Service
-async function callNotificationService(message: string) {
+async function callNotificationService(message: string, forceError: boolean = false) {
   const NOTIFICATION_URL = process.env.NOTIFICATION_SERVICE_URL || 'http://notification-service:3003';
-  
+
   try {
-    const response = await axios.post(`${NOTIFICATION_URL}/send`, { message });
+    const response = await axios.post(`${NOTIFICATION_URL}/send`, { message, forceError });
     return response.data;
   } catch (error: any) {
-    // Notificações podem falhar sem quebrar a transação
-    logger.warn('Falha ao enviar notificação', { error: error.message });
+    logger.error('Erro ao chamar notification service', { forceError, error: error.message });
+    // Se for erro forçado, propagar
+    if (forceError) {
+      throw error;
+    }
+    // Notificações podem falhar sem quebrar a transação (retorna undefined)
+    logger.warn('Falha ao enviar notificação (não crítico)', { error: error.message });
+    return undefined;
   }
 }
 
@@ -70,15 +76,24 @@ app.post('/api/transaction', async (req: Request<{}, TransactionResponse, Transa
   const startTime = Date.now();
   
   try {
-    const { type } = req.body;
-    logger.info('Processando transação', { type });
+    const { type, failService } = req.body;
+    logger.info('Processando transação', { type, failService });
+
+    // Simular erro na API principal
+    if (failService === 'api') {
+      throw new Error('Erro simulado na API principal');
+    }
 
     const result = await circuitBreaker.execute(async () => {
       // Chamar Ledger Service
-      const ledgerResult = await callLedgerService(type);
+      const ledgerResult = await callLedgerService(type, failService === 'ledger');
       
-      // Chamar Notification Service
-      await callNotificationService(`Transação ${type} processada`);
+      // Chamar Notification Service - se falhar e for erro forçado, propagar
+      if (failService === 'notification') {
+        await callNotificationService(`Transação ${type} processada`, true);
+      } else {
+        await callNotificationService(`Transação ${type} processada`, false);
+      }
       
       return ledgerResult;
     });

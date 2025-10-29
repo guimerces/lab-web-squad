@@ -15,13 +15,24 @@ const PORT = process.env.PORT || 3003;
 
 app.post('/send', async (req: Request, res: Response) => {
   const startTime = Date.now();
-  const { message } = req.body;
+  const { message, forceError } = req.body;
   
-  logger.info('Enviando notificação', { message });
+  logger.info('Enviando notificação', { message, forceError });
   
   // Simula envio de notificação
   const latency = Math.random() * 50 + 20;
   await new Promise(resolve => setTimeout(resolve, latency));
+
+  // Forçar erro se solicitado
+  if (forceError) {
+    const totalLatency = Date.now() - startTime;
+    logger.error('Erro ao enviar notificação', { message, forceError, latency: totalLatency });
+    res.status(500).json({ 
+      success: false, 
+      message: 'Erro ao enviar notificação' 
+    });
+    return;
+  }
 
   const totalLatency = Date.now() - startTime;
   logger.info('Notificação enviada', { message, latency: totalLatency });

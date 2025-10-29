@@ -39,14 +39,14 @@ export default function Home() {
     }
   };
 
-  const handleTransaction = async (type: 'success' | 'error' | 'chaos') => {
+  const handleTransaction = async (type: 'success' | 'error' | 'chaos', failService?: 'api' | 'ledger' | 'notification') => {
     setLoading(true);
     setLastResult(null);
 
     try {
       const response = await axios.post<TransactionResponse>(
         `${API_URL}/api/transaction`,
-        { type }
+        { type, failService }
       );
       setLastResult(response.data);
     } catch (error: any) {
@@ -99,28 +99,57 @@ export default function Home() {
         <div className="bg-gray-800 rounded-lg p-6 mb-6 shadow-xl">
           <h2 className="text-2xl font-semibold mb-4">🎮 Simular Transações</h2>
           
-          <div className="flex flex-col md:flex-row gap-4">
-            <TransactionButton
-              label="✅ Sucesso"
-              description="Sempre retorna sucesso"
-              onClick={() => handleTransaction('success')}
-              loading={loading}
-              color="green"
-            />
-            <TransactionButton
-              label="❌ Erro"
-              description="Sempre retorna erro"
-              onClick={() => handleTransaction('error')}
-              loading={loading}
-              color="red"
-            />
-            <TransactionButton
-              label="🌪️ Chaos Mode"
-              description="60% sucesso, 40% erro"
-              onClick={() => handleTransaction('chaos')}
-              loading={loading}
-              color="yellow"
-            />
+          <div className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <TransactionButton
+                label="Sucesso"
+                description="Sempre retorna sucesso"
+                onClick={() => handleTransaction('success')}
+                loading={loading}
+                color="green"
+              />
+              <TransactionButton
+                label="Erro Geral"
+                description="Erro genérico"
+                onClick={() => handleTransaction('error')}
+                loading={loading}
+                color="red"
+              />
+              <TransactionButton
+                label="Chaos Mode"
+                description="60% sucesso, 40% erro"
+                onClick={() => handleTransaction('chaos')}
+                loading={loading}
+                color="yellow"
+              />
+            </div>
+            
+            <div className="border-t border-gray-600 pt-4">
+              <h3 className="text-lg font-semibold mb-3">🎯 Simular Erros Específicos</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <TransactionButton
+                  label="Erro na API"
+                  description="Falha na API principal"
+                  onClick={() => handleTransaction('success', 'api')}
+                  loading={loading}
+                  color="red"
+                />
+                <TransactionButton
+                  label="Erro no Ledger"
+                  description="Falha no serviço de ledger"
+                  onClick={() => handleTransaction('success', 'ledger')}
+                  loading={loading}
+                  color="orange"
+                />
+                <TransactionButton
+                  label="Erro em Notificações"
+                  description="Falha no serviço de notificações"
+                  onClick={() => handleTransaction('success', 'notification')}
+                  loading={loading}
+                  color="purple"
+                />
+              </div>
+            </div>
           </div>
 
           {lastResult && (
@@ -180,6 +209,8 @@ function TransactionButton({
     green: 'bg-green-600 hover:bg-green-700',
     red: 'bg-red-600 hover:bg-red-700',
     yellow: 'bg-yellow-600 hover:bg-yellow-700',
+    orange: 'bg-orange-600 hover:bg-orange-700',
+    purple: 'bg-purple-600 hover:bg-purple-700',
   };
 
   return (

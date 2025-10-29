@@ -16,16 +16,18 @@ const PORT = process.env.PORT || 3002;
 // Simula processamento de extrato com latência variável
 app.post('/process', async (req: Request, res: Response) => {
   const startTime = Date.now();
-  const { type } = req.body;
+  const { type, forceError } = req.body;
   
-  logger.info('Processando extrato no ledger', { type });
+  logger.info('Processando extrato no ledger', { type, forceError });
   
   // Simula latência de processamento
   const latency = type === 'success' ? 50 : type === 'error' ? 20 : Math.random() * 100 + 50;
   await new Promise(resolve => setTimeout(resolve, latency));
 
-  if (type === 'error') {
-    logger.error('Erro ao processar no ledger', { type, latency: Date.now() - startTime });
+  // Forçar erro se solicitado
+  if (forceError || type === 'error') {
+    const totalLatency = Date.now() - startTime;
+    logger.error('Erro ao processar no ledger', { type, forceError, latency: totalLatency });
     res.status(500).json({ 
       success: false, 
       message: 'Erro ao processar extrato no ledger' 

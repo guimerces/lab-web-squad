@@ -1,5 +1,6 @@
 export interface TransactionRequest {
   type: 'success' | 'error' | 'chaos';
+  failService?: 'api' | 'ledger' | 'notification';
 }
 
 export interface TransactionResponse {

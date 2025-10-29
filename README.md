@@ -9,7 +9,7 @@ Este é um projeto apresenta as atividades incrementais assíncronas da matéria
 - Guilherme Antonio Merces Silva
 - Gustavo de Oliveira Ferreira
 - Iasmim da Cruz Marinho
-- Lávios Dias e Dias do Vale
+- Lávio Dias e Dias do Vale
 - Rafael Silva Santana
 - Stéfane Oliveira
 

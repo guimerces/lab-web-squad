@@ -1,6 +1,5 @@
 import { initializeTelemetry } from './telemetry';
 
-// IMPORTANTE: Inicializar telemetria ANTES de importar Express
 const shutdownTelemetry = initializeTelemetry();
 
 import express, { Request, Response } from 'express';

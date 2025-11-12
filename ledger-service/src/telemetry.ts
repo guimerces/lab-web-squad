@@ -19,7 +19,6 @@ export function initializeTelemetry() {
         '@opentelemetry/instrumentation-http': {
           enabled: true,
           ignoreIncomingRequestHook: (req) => {
-            // Ignorar health checks
             return !!(req.url?.includes('/health') || req.url?.includes('/metrics'));
           },
         },

@@ -77,11 +77,23 @@ app.post('/api/transaction', async (req: Request<{}, TransactionResponse, Transa
   
   try {
     const { type, failService } = req.body;
-    logger.info('Processando transação', { type, failService });
+    logger.info('Processando transação', { type, failService, body: JSON.stringify(req.body) });
 
     // Simular erro na API principal
     if (failService === 'api') {
       throw new Error('Erro simulado na API principal');
+    }
+
+    // Chaos mode: 60% sucesso, 40% erro
+    if (type === 'chaos') {
+      const random = Math.random();
+      logger.info('Chaos mode ativado', { random, willFail: random > 0.6 });
+      if (random > 0.6) { // 40% de chance de erro (0.6 a 1.0)
+        logger.error('Chaos mode: lançando erro (40% probabilidade)', { random });
+        throw new Error('Erro simulado pelo chaos mode (40% probabilidade)');
+      }
+      // 60% de chance de sucesso (0.0 a 0.6) - continua para processar normalmente
+      logger.info('Chaos mode: transação será processada (60% probabilidade)', { random });
     }
 
     const result = await circuitBreaker.execute(async () => {

@@ -66,7 +66,7 @@ export default function Home() {
     <main className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white p-8">
       <div className="max-w-4xl mx-auto">
         <header className="mb-8">
-          <h1 className="text-4xl font-bold mb-2">🏦 UFBank - Chaos Engineering Demo</h1>
+          <h1 className="text-4xl font-bold mb-2">UFBank - Chaos Engineering Demo</h1>
           <p className="text-gray-300">
             Demonstração prática de Circuit Breaker Pattern e Chaos Engineering
           </p>
@@ -74,7 +74,7 @@ export default function Home() {
 
         {/* Circuit Breaker Status */}
         <div className="bg-gray-800 rounded-lg p-6 mb-6 shadow-xl">
-          <h2 className="text-2xl font-semibold mb-4">🔌 Circuit Breaker</h2>
+          <h2 className="text-2xl font-semibold mb-4">Circuit Breaker</h2>
           
           <div className={`flex items-center justify-center p-8 rounded-lg ${
             circuitBreakerOpen 
@@ -97,7 +97,7 @@ export default function Home() {
 
         {/* Painel de Controle */}
         <div className="bg-gray-800 rounded-lg p-6 mb-6 shadow-xl">
-          <h2 className="text-2xl font-semibold mb-4">🎮 Simular Transações</h2>
+          <h2 className="text-2xl font-semibold mb-4">Simular Transações</h2>
           
           <div className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -125,7 +125,7 @@ export default function Home() {
             </div>
             
             <div className="border-t border-gray-600 pt-4">
-              <h3 className="text-lg font-semibold mb-3">🎯 Simular Erros Específicos</h3>
+              <h3 className="text-lg font-semibold mb-3">Simular Erros Específicos</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <TransactionButton
                   label="Erro na API"
@@ -171,7 +171,7 @@ export default function Home() {
 
         {/* Instruções */}
         <div className="bg-blue-900/30 rounded-lg p-6 border border-blue-500/30">
-          <h3 className="text-xl font-semibold mb-3">📚 Como Funciona o Circuit Breaker</h3>
+          <h3 className="text-xl font-semibold mb-3">Como Funciona o Circuit Breaker</h3>
           <ol className="list-decimal list-inside space-y-2 text-gray-200">
             <li>Clique em <strong>"Erro"</strong> 3 vezes consecutivas - o Circuit Breaker se abrirá (vermelho)</li>
             <li>Quando aberto, todas as requisições são bloqueadas imediatamente para proteger o sistema</li>

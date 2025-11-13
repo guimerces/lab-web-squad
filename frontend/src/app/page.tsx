@@ -54,7 +54,7 @@ export default function Home() {
         success: false,
         message: error.response?.data?.message || 'Erro ao processar transação',
         timestamp: new Date().toISOString(),
-        latency: 0,
+        latency: error.response?.data?.latency || 0,
       });
     } finally {
       setLoading(false);

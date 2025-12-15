@@ -1,4 +1,4 @@
-# Atividade 2 - Estruturação Atomic Design + Tela de Cadastro de Usuários
+# Atividade 2 e 3 - Estruturação Atomic Design + Tela de Cadastro de Usuários
 
 Este é um projeto simples criado com **Next.js**, que utiliza o a estruturação atomic design junto com uma página de cadastro de usuário.
 
@@ -57,23 +57,31 @@ Este é um projeto simples criado com **Next.js**, que utiliza o a estruturaçã
 1. Clone este repositório:
 
    ```bash
-   git clone https://github.com/guimerces/lab-web-squad.git
+   git clone -b atividade2 https://github.com/guimerces/lab-web-squad.git
+   ```
+
+2. Depois de clonar, abra o Command Prompt e navegue até a pasta do projeto:
+
+   ```bash
+   cd lab-web-squad 
+   ```
+   ```bash
    cd cadastro-usuario
    ```
 
-2. Instale as dependências:
+3. Se não tiver instalado, instale as dependências:
 
    ```bash
    npm install
    ```
 
-3. Inicie o servidor de desenvolvimento:
+4. Inicie o servidor de desenvolvimento:
 
    ```bash
    npm run dev
    ```
 
-4. Abra no navegador:
+5. Abra no navegador:
 
    ```
    http://localhost:3000

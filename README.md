@@ -1,6 +1,6 @@
-# Atividade 2 - Estruturação Atomic Design + Tela de Cadastro de Usuários
+# Atividade 4 - Tela de Cadastro de Máquinas de Pagamento
 
-Este é um projeto simples criado com **Next.js**, que utiliza o a estruturação atomic design junto com uma página de cadastro de usuário.
+Este é um projeto simples criado com **Next.js** que cria uma tela de cadastro de máquinas de pagamento.
 
 ---
 
@@ -21,6 +21,8 @@ Este é um projeto simples criado com **Next.js**, que utiliza o a estruturaçã
 .
 /src
 |-- /app
+|   |-- /maquininha
+|       |-- page.tsx
 |   |-- global.css
 |   |-- layout.tsx       
 |   |-- page.tsx
@@ -34,16 +36,20 @@ Este é um projeto simples criado com **Next.js**, que utiliza o a estruturaçã
 |   |   |-- button.tsx
 |   |   |-- input.tsx
 |   |   |-- label.tsx
+|   |   |-- select.tsx
 |   |
 |   |-- /molecules        
 |   |   |-- formfield.tsx
 |   |   |-- password-field.tsx
+|   |   |-- select-field.tsx
 |   |
 |   |-- /organisms    
 |   |   |-- form.tsx
+|   |   |-- maquininha-form.tsx
 |   |
 |   |-- /pages
 |   |   |-- cadastro-page.tsx
+|   |   |-- maquininha-page.tsx
 |   |
 |   |-- /templates    
 |   |   |-- authlayout.tsx
@@ -86,3 +92,4 @@ Este é um projeto simples criado com **Next.js**, que utiliza o a estruturaçã
 | Rota         | Descrição                                        |
 | ------------ | ------------------------------------------------ |
 | `/`          | Página de cadastro de usuários                   |
+| `/maquininha`| Página de máquinas de pagamento                  |

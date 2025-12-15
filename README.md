@@ -2,6 +2,8 @@
 
 Este é um projeto simples criado com **Next.js**, que utiliza o a estruturação atomic design junto com uma página de cadastro de usuário.
 
+**Nota:** Como a atividade 2 e 3 tem o mesmo objetivo, a Squad preferiu manter as atividades juntas.
+
 ---
 
 ## Alunos da Squad:

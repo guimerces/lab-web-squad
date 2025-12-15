@@ -33,23 +33,31 @@ Este é um projeto simples criado com **Next.js**, que exibe uma página “Hell
 1. Clone este repositório:
 
    ```bash
-   git clone https://github.com/guimerces/lab-web-squad.git
+   git clone -b atividade1 https://github.com/guimerces/lab-web-squad.git
+   ```
+
+2. Depois de clonar, abra o Command Prompt e navegue até a pasta do projeto:
+
+   ```bash
+   cd lab-web-squad 
+   ```
+   ```bash
    cd hello-world
    ```
 
-2. Instale as dependências:
+3. Se não tiver instalado, instale as dependências:
 
    ```bash
    npm install
    ```
 
-3. Inicie o servidor de desenvolvimento:
+4. Inicie o servidor de desenvolvimento:
 
    ```bash
    npm run dev
    ```
 
-4. Abra no navegador:
+5. Abra no navegador:
 
    ```
    http://localhost:3000

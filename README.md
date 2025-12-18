@@ -1,55 +1,58 @@
-# Atividade 2 e 3 - Estruturação Atomic Design + Tela de Cadastro de Usuários
+# Atividade 3 – Cadastro de Usuários com API Routes (Next.js)
 
-Este é um projeto simples criado com **Next.js**, que utiliza o a estruturação atomic design junto com uma página de cadastro de usuário.
-
-**Nota:** Como a atividade 2 e 3 tem o mesmo objetivo, a Squad preferiu manter as atividades juntas.
+Este projeto foi desenvolvido utilizando **Next.js (App Router)** e tem como objetivo implementar uma **tela de cadastro de usuários** seguindo o padrão **Atomic Design**, com **integração inicial às API Routes do Next.js**.
 
 ---
 
-## Alunos da Squad:
-- Eduardo Augusto Barros Coutinho
-- Guilherme Antonio Merces Silva
-- Gustavo de Oliveira Ferreira
-- Iasmim da Cruz Marinho
-- Lávio Dias e Dias do Vale
-- Rafael Silva Santana
-- Stéfane Oliveira
+## 👥 Alunos da Squad
+- Eduardo Augusto Barros Coutinho  
+- Guilherme Antonio Merces Silva  
+- Gustavo de Oliveira Ferreira  
+- Iasmim da Cruz Marinho  
+- Lávio Dias e Dias do Vale  
+- Rafael Silva Santana  
+- Stéfane Oliveira  
 
 ---
 
-## Estrutura do projeto
+## 🧱 Estrutura do Projeto
 
-```
-.
-/src
-|-- /app
-|   |-- global.css
-|   |-- layout.tsx       
-|   |-- page.tsx
-|
-|-- /assets
-|   |-- /images
-|       |-- caderneta.png
-|
-|-- /components
-|   |-- /atoms            
-|   |   |-- button.tsx
-|   |   |-- input.tsx
-|   |   |-- label.tsx
-|   |
-|   |-- /molecules        
-|   |   |-- formfield.tsx
-|   |   |-- password-field.tsx
-|   |
-|   |-- /organisms    
-|   |   |-- form.tsx
-|   |
-|   |-- /pages
-|   |   |-- cadastro-page.tsx
-|   |
-|   |-- /templates    
-|   |   |-- authlayout.tsx
-|-- ...
+```bash
+src/
+├── app/
+│   ├── api/
+│   │   └── usuarios/
+│   │       └── route.ts
+│   ├── cadastro/
+│   │   └── page.tsx
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+│
+├── assets/
+│   └── images/
+│       └── caderneta.png
+│
+├── components/
+│   ├── atoms/
+│   │   ├── button.tsx
+│   │   ├── input.tsx
+│   │   └── label.tsx
+│   │
+│   ├── molecules/
+│   │   ├── formfield.tsx
+│   │   └── password-field.tsx
+│   │
+│   ├── organisms/
+│   │   └── form.tsx
+│   │
+│   ├── pages/
+│   │   ├── cadastro-page.tsx
+│   │   └── home-page.tsx
+│   │
+│   └── templates/
+│       └── authlayout.tsx
+
 ```
 
 ---
@@ -59,7 +62,7 @@ Este é um projeto simples criado com **Next.js**, que utiliza o a estruturaçã
 1. Clone este repositório:
 
    ```bash
-   git clone -b atividade2 https://github.com/guimerces/lab-web-squad.git
+   git clone -b atividade3 https://github.com/guimerces/lab-web-squad.git
    ```
 
 2. Depois de clonar, abra o Command Prompt e navegue até a pasta do projeto:
@@ -93,6 +96,9 @@ Este é um projeto simples criado com **Next.js**, que utiliza o a estruturaçã
 
 ## Rotas principais
 
-| Rota         | Descrição                                        |
-| ------------ | ------------------------------------------------ |
-| `/`          | Página de cadastro de usuários                   |
+| Rota             | Descrição                                                    |
+| ---------------- | ------------------------------------------------------------ |
+| `/`              | Página inicial da Ufbank                                     |
+| `/cadastro`      | Tela de cadastro de usuários                                 |
+| `/api/usuarios`  | API Route para cadastro e listagem de usuários (GET/POST)    |
+

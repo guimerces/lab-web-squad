@@ -17,42 +17,42 @@ Este projeto foi desenvolvido utilizando **Next.js (App Router)** e tem como obj
 
 ## Estrutura do Projeto
 
-```bash
+```
+.
 /src
 |-- /app
-│   |-- /api
-│   │   |-- /usuarios
-│   │       |-- route.ts
-│   |-- /cadastro
-│   │   |-- page.tsx
-│   |-- globals.css
-│   |-- layout.tsx
-│   |-- page.tsx
-│
+|   |-- /api
+|   |   |-- /usuarios
+|   |      |-- route.ts
+|   |   |-- /cadastro
+|   |      |-- route.ts
+|   |-- global.css
+|   |-- layout.tsx       
+|   |-- page.tsx
+|
 |-- /assets
-│   |-- /images
-│       |-- caderneta.png
-│
+|   |-- /images
+|       |-- caderneta.png
+|
 |-- /components
-│   |-- /atoms
-│   │   |-- button.tsx
-│   │   |-- input.tsx
-│   │   |-- label.tsx
-│   │
-│   |-- /molecules
-│   │   |-- formfield.tsx
-│   │   |-- password-field.tsx
-│   │
-│   |-- /organisms
-│   │   |-- form.tsx
-│   │
-│   |-- /pages
-│   │   |-- cadastro-page.tsx
-│   │   |-- home-page.tsx
-│   │
-│   |-- /templates
-│       |-- authlayout.tsx
-
+|   |-- /atoms            
+|   |   |-- button.tsx
+|   |   |-- input.tsx
+|   |   |-- label.tsx
+|   |
+|   |-- /molecules        
+|   |   |-- formfield.tsx
+|   |   |-- password-field.tsx
+|   |
+|   |-- /organisms    
+|   |   |-- form.tsx
+|   |
+|   |-- /pages
+|   |   |-- cadastro-page.tsx
+|   |
+|   |-- /templates    
+|   |   |-- authlayout.tsx
+|-- ...
 ```
 
 ---

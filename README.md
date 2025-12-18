@@ -1,6 +1,6 @@
 # Atividade 2 - Estruturação Atomic Design + Tela de Cadastro de Usuários
 
-Este é um projeto simples criado com **Next.js**, que utiliza o a estruturação atomic design junto com uma página de cadastro de usuário.
+Este é um projeto simples criado com Next.js, que utiliza o a estruturação atomic design junto com uma página de cadastro de usuário.
 
 ---
 

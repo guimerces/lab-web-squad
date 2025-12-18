@@ -19,40 +19,51 @@ Este é um projeto simples criado com **Next.js** que cria uma tela de cadastro 
 
 ```
 .
-/src
-|-- /app
-|   |-- /maquininha
-|       |-- page.tsx
-|   |-- global.css
-|   |-- layout.tsx       
-|   |-- page.tsx
-|
-|-- /assets
-|   |-- /images
-|       |-- caderneta.png
-|
-|-- /components
-|   |-- /atoms            
-|   |   |-- button.tsx
-|   |   |-- input.tsx
-|   |   |-- label.tsx
-|   |   |-- select.tsx
-|   |
-|   |-- /molecules        
-|   |   |-- formfield.tsx
-|   |   |-- password-field.tsx
-|   |   |-- select-field.tsx
-|   |
-|   |-- /organisms    
-|   |   |-- form.tsx
-|   |   |-- maquininha-form.tsx
-|   |
-|   |-- /pages
-|   |   |-- cadastro-page.tsx
-|   |   |-- maquininha-page.tsx
-|   |
-|   |-- /templates    
-|   |   |-- authlayout.tsx
+src/
+├── app/
+│   ├── api/
+│   │   ├── usuarios/
+│   │   │   └── route.ts
+│   │   └── maquininhas/
+│   │       └── route.ts
+│   │
+│   ├── cadastro/
+│   │   └── page.tsx
+│   │
+│   ├── maquininha/
+│   │   └── page.tsx
+│   │
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+│
+├── assets/
+│   └── images/
+│       └── caderneta.png
+│
+├── components/
+│   ├── atoms/
+│   │   ├── button.tsx
+│   │   ├── input.tsx
+│   │   ├── label.tsx
+│   │   └── select.tsx
+│   │
+│   ├── molecules/
+│   │   ├── formfield.tsx
+│   │   ├── password-field.tsx
+│   │   └── select-field.tsx
+│   │
+│   ├── organisms/
+│   │   ├── form.tsx
+│   │   └── maquininha-form.tsx
+│   │
+│   ├── pages/
+│   │   ├── home-page.tsx
+│   │   ├── cadastro-page.tsx
+│   │   └── maquininha-page.tsx
+│   │
+│   └── templates/
+│       └── authlayout.tsx
 |-- ...
 ```
 
@@ -97,7 +108,11 @@ Este é um projeto simples criado com **Next.js** que cria uma tela de cadastro 
 
 ## Rotas principais
 
-| Rota         | Descrição                                        |
-| ------------ | ------------------------------------------------ |
-| `/`          | Página de cadastro de usuários                   |
-| `/maquininha`| Página de máquinas de pagamento                  |
+| Rota               | Descrição                                                      |
+| ------------------ | -------------------------------------------------------------- |
+| `/`                | Página inicial                                                 |
+| `/cadastro`        | Página de cadastro de usuários                                 |
+| `/maquininha`      | Página de máquinas de pagamento                                |
+| `/api/usuarios`    | API Route para cadastro e listagem de usuários (GET/POST)      |
+| `/api/maquininhas` | API Route para cadastro e listagem de maquininhas (GET/POST)   |
+

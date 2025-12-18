@@ -21,6 +21,7 @@ Ao clicar, irá ser redirecionado para a branch de cada entrega.
 - [Atividade 2](https://github.com/guimerces/lab-web-squad/tree/atividade2)
 - [Atividade 3](https://github.com/guimerces/lab-web-squad/tree/atividade3)
 - [Atividade 4](https://github.com/guimerces/lab-web-squad/tree/atividade4)
+- [Atividade 5](https://github.com/guimerces/lab-web-squad/tree/atividade5)
 
 Simulação para o Seminário:
 - [Códigos](https://github.com/guimerces/lab-web-squad/tree/seminario)

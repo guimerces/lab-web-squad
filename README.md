@@ -19,51 +19,48 @@ Este é um projeto simples criado com **Next.js** que cria uma tela de cadastro 
 
 ```
 .
-src/
-├── app/
-│   ├── api/
-│   │   ├── usuarios/
-│   │   │   └── route.ts
-│   │   └── maquininhas/
-│   │       └── route.ts
-│   │
-│   ├── cadastro/
-│   │   └── page.tsx
-│   │
-│   ├── maquininha/
-│   │   └── page.tsx
-│   │
-│   ├── globals.css
-│   ├── layout.tsx
-│   └── page.tsx
-│
-├── assets/
-│   └── images/
-│       └── caderneta.png
-│
-├── components/
-│   ├── atoms/
-│   │   ├── button.tsx
-│   │   ├── input.tsx
-│   │   ├── label.tsx
-│   │   └── select.tsx
-│   │
-│   ├── molecules/
-│   │   ├── formfield.tsx
-│   │   ├── password-field.tsx
-│   │   └── select-field.tsx
-│   │
-│   ├── organisms/
-│   │   ├── form.tsx
-│   │   └── maquininha-form.tsx
-│   │
-│   ├── pages/
-│   │   ├── home-page.tsx
-│   │   ├── cadastro-page.tsx
-│   │   └── maquininha-page.tsx
-│   │
-│   └── templates/
-│       └── authlayout.tsx
+/src
+|-- /app
+|   |-- /api
+|   |   |-- /usuarios
+|   |      |-- route.ts
+|   |   |-- /maquininha
+|   |      |-- route.ts
+|   |-- /cadastro
+|   |   |-- page.tsx
+|   |-- /maquininha
+|   |   |-- page.tsx
+|   |-- global.css
+|   |-- layout.tsx       
+|   |-- page.tsx
+|
+|-- /assets
+|   |-- /images
+|       |-- caderneta.png
+|
+|-- /components
+|   |-- /atoms            
+|   |   |-- button.tsx
+|   |   |-- input.tsx
+|   |   |-- label.tsx
+|   |   |-- select.tsx
+|   |
+|   |-- /molecules        
+|   |   |-- formfield.tsx
+|   |   |-- password-field.tsx
+|   |   |-- select-field.tsx
+|   |
+|   |-- /organisms    
+|   |   |-- form.tsx
+|   |   |-- maquininha-form.tsx
+|   |
+|   |-- /pages
+|   |   |-- cadastro-page.tsx
+|   |   |-- home-page.tsx
+|   |   |-- maquininha-page.tsx
+|   |
+|   |-- /templates    
+|   |   |-- authlayout.tsx
 |-- ...
 ```
 

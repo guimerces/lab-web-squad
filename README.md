@@ -1,6 +1,6 @@
 # Atividade 4 - Tela de Cadastro de Máquinas de Pagamento
 
-Este é um projeto simples criado com **Next.js** que cria uma tela de cadastro de máquinas de pagamento.
+Este é um projeto simples criado com Next.js que cria uma tela de cadastro de máquinas de pagamento.
 
 ---
 

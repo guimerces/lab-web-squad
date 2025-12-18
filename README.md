@@ -24,8 +24,8 @@ Este projeto foi desenvolvido utilizando **Next.js (App Router)** e tem como obj
 |   |-- /api
 |   |   |-- /usuarios
 |   |      |-- route.ts
-|   |   |-- /cadastro
-|   |      |-- route.ts
+|   |-- /cadastro
+|   |   |-- page.tsx
 |   |-- global.css
 |   |-- layout.tsx       
 |   |-- page.tsx
@@ -49,6 +49,7 @@ Este projeto foi desenvolvido utilizando **Next.js (App Router)** e tem como obj
 |   |
 |   |-- /pages
 |   |   |-- cadastro-page.tsx
+|   |   |-- home-page.tsx
 |   |
 |   |-- /templates    
 |   |   |-- authlayout.tsx

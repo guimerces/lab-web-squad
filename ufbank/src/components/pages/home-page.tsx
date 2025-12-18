@@ -15,6 +15,10 @@ export default function HomePage() {
         <Link href="/maquininha">
           <Button>Cadastrar maquininha</Button>
         </Link>
+
+        <Link href="/valores">
+          <Button>Configurar valores da maquininha</Button>
+        </Link>
       </div>
     </main>
   );

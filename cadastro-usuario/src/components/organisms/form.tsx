@@ -1,42 +1,51 @@
 "use client";
 
-import { useState } from 'react';
-import { FormField } from '@/components/molecules/formfield';
-import { PasswordField } from '@/components/molecules/password-field';
-import { Button } from '@/components/atoms/button';
-import Image from 'next/image';
-import Cadastro from '@/assets/images/caderneta.png';
+import { useState } from "react";
+import { FormField } from "@/components/molecules/formfield";
+import { PasswordField } from "@/components/molecules/password-field";
+import { Button } from "@/components/atoms/button";
+import Image from "next/image";
+import Cadastro from "@/assets/images/caderneta.png";
 
 export function RegistrationForm() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: '',
+    name: "",
+    email: "",
+    password: "",
   });
-  
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Dados do formulário:", formData);
-    alert("Cadastro enviado!");
+
+    await fetch("/api/usuarios", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        nome: formData.name,
+        email: formData.email,
+        senha: formData.password,
+      }),
+    });
+
+    alert("Cadastro enviado com sucesso!");
+    setFormData({ name: "", email: "", password: "" });
   };
 
   return (
     <form onSubmit={handleSubmit} className="w-full">
       <div className="flex justify-center">
-        <Image
-          src={Cadastro}
-          alt=""
-          width={80}
-          height={80}
-          priority
-        />
+        <Image src={Cadastro} alt="" width={80} height={80} priority />
       </div>
-      <h2 className="text-2xl font-bold text-center mb-6 text-gray-500">Cadastre-se</h2>
+      <h2 className="text-2xl font-bold text-center mb-6 text-gray-500">
+        Cadastre-se
+      </h2>
 
       <FormField
         label="Nome Completo"
@@ -64,11 +73,9 @@ export function RegistrationForm() {
         onChange={handleChange}
         required
       />
-      
+
       <div className="mt-6">
-        <Button type="submit">
-          Cadastrar
-        </Button>
+        <Button type="submit">Cadastrar</Button>
       </div>
     </form>
   );

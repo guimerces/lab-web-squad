@@ -1,5 +1,5 @@
-import { CadastroPage } from "@/components/pages/cadastro-page";
+import HomePage from "@/components/pages/home-page";
 
 export default function Page() {
-  return <CadastroPage />;
+  return <HomePage />;
 }

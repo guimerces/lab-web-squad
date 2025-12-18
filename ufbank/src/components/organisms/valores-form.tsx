@@ -65,7 +65,7 @@ const RateSection = ({
                   lucroLiquidoReais > 0 ? "text-green-600" : "text-red-600"
                 }`}
               >
-                Lucro Real (em R$ 100): R$ {lucroLiquidoReais.toFixed(2)}
+                Lucro Real (em R$100): R$ {lucroLiquidoReais.toFixed(2)}
               </span>
             )}
           </div>
@@ -106,7 +106,8 @@ export function ValoresForm() {
     modelo: "",
     planoRecebimento: "d1",
     tarifaFixa: "",
-
+    pixCobrado: "",
+    pixCusto: "",
     debitoCobrado: "",
     debitoCusto: "",
     creditoVistaCobrado: "",
@@ -216,6 +217,14 @@ export function ValoresForm() {
           3. Taxas por Tipo de Pagamento
         </h3>
 
+        <RateSection
+          title="PIX"
+          chargedName="pixCobrado"
+          costName="pixCusto"
+          formData={formData}
+          handleChange={handleChange}
+          tarifaFixa={formData.tarifaFixa}
+        />
         <RateSection
           title="Débito"
           chargedName="debitoCobrado"

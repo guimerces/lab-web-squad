@@ -1,6 +1,6 @@
-# Atividade 4 - Tela de Cadastro de Máquinas de Pagamento
+# Atividade 5 - Tela de Cadastro de Valores das Máquinas
 
-Este é um projeto simples criado com **Next.js** que cria uma tela de cadastro de máquinas de pagamento.
+Este é um projeto simples criado com Next.js que cria uma tela de cadastro de valores da máquina de pagamento.
 
 ---
 
@@ -21,8 +21,19 @@ Este é um projeto simples criado com **Next.js** que cria uma tela de cadastro 
 .
 /src
 |-- /app
+|   |-- /api
+|   |   |-- /usuarios
+|   |      |-- route.ts
+|   |   |-- /maquininha
+|   |      |-- route.ts
+|   |   |-- /valores
+|   |      |-- route.ts
+|   |-- /cadastro
+|   |   |-- page.tsx
 |   |-- /maquininha
-|       |-- page.tsx
+|   |   |-- page.tsx
+|   |-- /valores
+|   |   |-- page.tsx
 |   |-- global.css
 |   |-- layout.tsx       
 |   |-- page.tsx
@@ -46,10 +57,13 @@ Este é um projeto simples criado com **Next.js** que cria uma tela de cadastro 
 |   |-- /organisms    
 |   |   |-- form.tsx
 |   |   |-- maquininha-form.tsx
+|   |   |-- valores-form.tsx
 |   |
 |   |-- /pages
 |   |   |-- cadastro-page.tsx
+|   |   |-- home-page.tsx
 |   |   |-- maquininha-page.tsx
+|   |   |-- valores-page.tsx
 |   |
 |   |-- /templates    
 |   |   |-- authlayout.tsx
@@ -63,7 +77,7 @@ Este é um projeto simples criado com **Next.js** que cria uma tela de cadastro 
 1. Clone este repositório:
 
    ```bash
-   git clone -b atividade4 https://github.com/guimerces/lab-web-squad.git
+   git clone -b atividade5 https://github.com/guimerces/lab-web-squad.git
    ```
 
 2. Depois de clonar, abra o Command Prompt e navegue até a pasta do projeto:
@@ -97,7 +111,12 @@ Este é um projeto simples criado com **Next.js** que cria uma tela de cadastro 
 
 ## Rotas principais
 
-| Rota         | Descrição                                        |
-| ------------ | ------------------------------------------------ |
-| `/`          | Página de cadastro de usuários                   |
-| `/maquininha`| Página de máquinas de pagamento                  |
+| Rota               | Descrição                                                                |
+| ------------------ | ------------------------------------------------------------------------ |
+| `/`                | Página inicial                                                           |
+| `/cadastro`        | Página de cadastro de usuários                                           |
+| `/maquininha`      | Página de cadastro de máquinas de pagamento                              |
+| `/valores`           | Página de cadastro de valores de máquinas de pagamento                 |
+| `/api/usuarios`    | API Route para cadastro e listagem de usuários (GET/POST)                |
+| `/api/maquininhas` | API Route para cadastro e listagem de maquininhas (GET/POST)             |
+| `/api/valores`     | API Route para cadastro e listagem de valores das maquininhas (GET/POST) |

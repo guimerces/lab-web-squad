@@ -1,4 +1,4 @@
-# Atividade 3 - Cadastro de Usuários com API Routes (Next.js)
+# Atividade 3 - Estruturação Atomic Design + Tela de Cadastro de Usuários com API Routes
 
 Este projeto foi desenvolvido utilizando **Next.js (App Router)** e tem como objetivo implementar uma **tela de cadastro de usuários** seguindo o padrão **Atomic Design**, com **integração inicial às API Routes do Next.js**.
 

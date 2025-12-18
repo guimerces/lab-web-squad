@@ -18,8 +18,9 @@ Este é um projeto apresenta as atividades incrementais assíncronas da matéria
 ## Atividades do Curso:
 Ao clicar, irá ser redirecionado para a branch de cada entrega.
 - [Atividade 1](https://github.com/guimerces/lab-web-squad/tree/atividade1)
-- [Atividade 2 e 3](https://github.com/guimerces/lab-web-squad/tree/atividade2)
+- [Atividade 2](https://github.com/guimerces/lab-web-squad/tree/atividade2)
+- [Atividade 3](https://github.com/guimerces/lab-web-squad/tree/atividade3)
 - [Atividade 4](https://github.com/guimerces/lab-web-squad/tree/atividade4)
 
-Código do Seminário:
-- [Seminário](https://github.com/guimerces/lab-web-squad/tree/seminario)
+Simulação para o Seminário:
+- [Códigos](https://github.com/guimerces/lab-web-squad/tree/seminario)
